@@ -48,5 +48,8 @@ $('#btnLogout').click(() => {
     location.href = '/login.html';
   });
 });
+function change() {
+  $('#change').addClass('layui-this').next().removeClass('layui-this');
+}
 
 getUSerInfo();

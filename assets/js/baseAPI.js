@@ -1,13 +1,13 @@
 $.ajaxPrefilter((options) => {
-//   console.log(options);
-  options.url = 'http://www.liulongbin.top:3007' + options.url;
+  //   console.log(options);
+  options.url = 'http://big-event-api-t.itheima.net' + options.url;
   if (options.url.includes('/my/')) {
     options.headers = {
       Authorization: localStorage.getItem('token'),
     };
   }
 
-  options.complete=(res) => {
+  options.complete = (res) => {
     console.log(res);
     if (
       res.responseJSON.status === 1 &&
@@ -16,6 +16,5 @@ $.ajaxPrefilter((options) => {
       localStorage.removeItem('token');
       location.href = '/login.html';
     }
-  }
+  };
 });
-
